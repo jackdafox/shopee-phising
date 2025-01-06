@@ -233,74 +233,76 @@ const Logistics = {
 
 const Footer = () => {
   return (
-    <div className="flex flex-col items-center w-full py-10 px-20 mt-48 h-full bg-zinc-50">
-      <div className="flex gap-24 justify-center">
+    <footer className="flex flex-col items-center w-full py-5 md:py-10 px-4 md:px-20 mt-24 md:mt-48 h-full bg-zinc-50">
+      <div className="flex flex-col md:flex-row gap-8 md:gap-24 justify-center w-full max-w-[60rem]">
+      <div className="grid grid-cols-2 md:flex gap-8 md:gap-24">
         <FooterList {...CustomerService} />
         <FooterList {...AboutUs} />
-        <div className="flex flex-col gap-2 ml-10">
-          <div className="flex flex-col gap-5">
-            <FooterBrand {...Payment} />
-            <FooterBrand {...Logistics} />
-          </div>
+      </div>
+      <div className="flex flex-col gap-2 md:ml-10">
+        <div className="flex flex-col gap-5">
+        <FooterBrand {...Payment} />
+        <FooterBrand {...Logistics} />
         </div>
-        <div className="flex flex-col gap-2 ml-10">
-          <h1 className="font-bold text-[0.85rem] text-zinc-600 mb-3 ">
-            FOLLOW US
-          </h1>
-          <div className="flex flex-col gap-3 text-[0.75rem] text-zinc-600">
-            <Link
-              href="https://www.facebook.com/ShopeeMY"
-              className="flex gap-2 items-center hover:text-[#EE4D2D]"
-            >
-              <img
-                src="https://down-my.img.susercontent.com/file/c11c0702937809e3f9d6a9bb72d56395"
-                alt="payment"
-                className="w-4 h-4"
-              />
-              <h1>Facebook</h1>
-            </Link>
-            <Link
-              href="https://www.instagram.com/Shopee_MY/"
-              className="flex gap-2 items-center hover:text-[#EE4D2D]"
-            >
-              <img
-                src="https://down-my.img.susercontent.com/file/9d986b85018e2dcbe2dec893621657b3"
-                alt="payment"
-                className="w-4 h-4"
-              />
-              <h1>Instagram</h1>
-            </Link>
-            <Link
-              href="https://shopee.com.my/shopee_mamak"
-              className="flex gap-2 items-center hover:text-[#EE4D2D]"
-            >
-              <img
-                src="https://down-my.img.susercontent.com/file/880e3d004694ae96b8207120dca86daa"
-                alt="payment"
-                className="w-4 h-4"
-              />
-              <h1>Shopee Mamak</h1>
-            </Link>
-            <Link
-              href="https://www.linkedin.com/company/shopee"
-              className="flex gap-2 items-center hover:text-[#EE4D2D]"
-            >
-              <img
-                src="https://down-my.img.susercontent.com/file/f2cffbdd4e671db0c283c481130ce8e3"
-                alt="payment"
-                className="w-4 h-4"
-              />
-              <h1>LinkedIn</h1>
-            </Link>
-          </div>
+      </div>
+      <div className="flex flex-col gap-2 md:ml-10">
+        <h1 className="font-bold text-[0.85rem] text-zinc-600 mb-3">
+        FOLLOW US
+        </h1>
+        <div className="flex flex-col gap-3 text-[0.75rem] text-zinc-600">
+        <Link
+          href="https://www.facebook.com/ShopeeMY"
+          className="flex gap-2 items-center hover:text-[#EE4D2D]"
+        >
+          <img
+          src="https://down-my.img.susercontent.com/file/c11c0702937809e3f9d6a9bb72d56395"
+          alt="payment"
+          className="w-4 h-4"
+          />
+          <h1>Facebook</h1>
+        </Link>
+        <Link
+          href="https://www.instagram.com/Shopee_MY/"
+          className="flex gap-2 items-center hover:text-[#EE4D2D]"
+        >
+          <img
+          src="https://down-my.img.susercontent.com/file/9d986b85018e2dcbe2dec893621657b3"
+          alt="payment"
+          className="w-4 h-4"
+          />
+          <h1>Instagram</h1>
+        </Link>
+        <Link
+          href="https://shopee.com.my/shopee_mamak"
+          className="flex gap-2 items-center hover:text-[#EE4D2D]"
+        >
+          <img
+          src="https://down-my.img.susercontent.com/file/880e3d004694ae96b8207120dca86daa"
+          alt="payment"
+          className="w-4 h-4"
+          />
+          <h1>Shopee Mamak</h1>
+        </Link>
+        <Link
+          href="https://www.linkedin.com/company/shopee"
+          className="flex gap-2 items-center hover:text-[#EE4D2D]"
+        >
+          <img
+          src="https://down-my.img.susercontent.com/file/f2cffbdd4e671db0c283c481130ce8e3"
+          alt="payment"
+          className="w-4 h-4"
+          />
+          <h1>LinkedIn</h1>
+        </Link>
         </div>
+      </div>
       </div>
       <hr className="w-full border-zinc-300 mt-10 max-w-[60rem]" />
-      <div className="flex flex-col items-start mt-10 max-w-[60rem] text-sm w-full text-zinc-500">
-        <h1>Copyright 2025. Shopee Mobile Malaysia Sdn. Bhd. All Rights Reserved.</h1>
-        <h1>Country & Region: Singapore | Malaysia | Thailand | Taiwan | Indonesia | Vietnam | Philippines | Brazil | Mexico | Pakistan | Chile | Colombia</h1>
+      <div className="flex flex-col items-start mt-10 max-w-[60rem] text-xs md:text-sm w-full text-zinc-500 px-4 md:px-0">
+      <h1>Copyright 2025. Shopee Mobile Malaysia Sdn. Bhd. All Rights Reserved.</h1>
+      <h1 className="mt-2">Country & Region: Singapore | Malaysia | Thailand | Taiwan | Indonesia | Vietnam | Philippines | Brazil | Mexico | Pakistan | Chile | Colombia</h1>
       </div>
-    </div>
+    </footer>
   );
 };
 

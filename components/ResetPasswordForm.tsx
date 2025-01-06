@@ -35,49 +35,53 @@ const ResetPasswordForm = () => {
   }
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-        <FormField
-          control={form.control}
-          name="email"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Email</FormLabel>
-              <FormControl>
-                <Input placeholder="Email" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="password"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Password</FormLabel>
-              <FormControl>
-                <Input placeholder="Password" type="password" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="confirm_password"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Confirm Password</FormLabel>
-              <FormControl>
-                <Input placeholder="Password" type="password" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <Button type="submit" className="w-full rounded-none bg-[#EE4D2D]" disabled={loading}>
-          CONTINUE
-        </Button>
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 w-full max-w-md mx-auto p-4">
+      <FormField
+        control={form.control}
+        name="email"
+        render={({ field }) => (
+        <FormItem>
+          <FormLabel className="text-sm md:text-base">Email</FormLabel>
+          <FormControl>
+          <Input placeholder="Email" {...field} className="w-full" />
+          </FormControl>
+          <FormMessage />
+        </FormItem>
+        )}
+      />
+      <FormField
+        control={form.control}
+        name="password"
+        render={({ field }) => (
+        <FormItem>
+          <FormLabel className="text-sm md:text-base">Password</FormLabel>
+          <FormControl>
+          <Input placeholder="Password" type="password" {...field} className="w-full" />
+          </FormControl>
+          <FormMessage />
+        </FormItem>
+        )}
+      />
+      <FormField
+        control={form.control}
+        name="confirm_password"
+        render={({ field }) => (
+        <FormItem>
+          <FormLabel className="text-sm md:text-base">Confirm Password</FormLabel>
+          <FormControl>
+          <Input placeholder="Password" type="password" {...field} className="w-full" />
+          </FormControl>
+          <FormMessage />
+        </FormItem>
+        )}
+      />
+      <Button 
+        type="submit" 
+        className="w-full rounded-none bg-[#EE4D2D] text-sm md:text-base py-2 md:py-3" 
+        disabled={loading}
+      >
+        CONTINUE
+      </Button>
       </form>
     </Form>
   );
