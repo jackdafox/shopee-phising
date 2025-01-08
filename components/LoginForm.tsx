@@ -61,7 +61,7 @@ const LoginForm = () => {
           name="password"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-sm font-bold">New Password</FormLabel>
+              <FormLabel className="text-sm font-bold">Password</FormLabel>
               <FormControl>
                 <Input
                   placeholder="Password"
