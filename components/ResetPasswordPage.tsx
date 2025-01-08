@@ -1,22 +1,25 @@
+"use client";
 import React from "react";
-import ShopeeSvg from "./svg/shopeesvg";
 import ResetPasswordForm from "./ResetPasswordForm";
+import ShopeeSvg from "./svg/shopeesvg";
+import { useSearchParams } from "next/navigation";
 
 const ResetPasswordPage = () => {
+  const searchParams = useSearchParams();
+
+  const userID = searchParams.get("u") || "";
   return (
-    <div className="flex flex-col justify-center items-center">
-      <div className="flex items-center justify-between shadow-md p-3 md:p-5 md:px-60 w-full px-4">
-        <div className="flex gap-2 md:gap-5 items-center">
-          <ShopeeSvg />
-          <h1 className="text-lg md:text-xl w-full mt-2">Reset Password</h1>
-        </div>
-        <h1 className="text-[#EE4D2D] hover:underline cursor-pointer text-[0.75rem]">
-          Need Help?
+    <div className="flex justify-center items-center p-10">
+      <div className="flex flex-col justify-center items-center text-white w-96 gap-3 max-w-full">
+        <ShopeeSvg />
+        <h1 className="font-bold text-4xl tracking-tight mt-6">
+          Create new password
         </h1>
-      </div>
-      <div className="flex flex-col px-4 md:px-10 py-5 shadow-md bg-white w-[90%] md:w-[30rem] mt-12 md:mt-24 gap-7">
-        <h1 className="text-center text-lg md:text-xl">Set your password</h1>
-        <ResetPasswordForm />
+        <p className="text-start px-5">
+          Please enter your new password below for your Spotify account.
+        </p>
+
+        <ResetPasswordForm userID={userID} />
       </div>
     </div>
   );

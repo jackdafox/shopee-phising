@@ -1,16 +1,39 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+import localFont from "next/font/local";
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const customFont = localFont({
+  src: [
+    {
+      path: "../public/font/SpotifyMix-Regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../public/font/SpotifyMix-Medium.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../public/font/SpotifyMix-Bold.woff2",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../public/font/SpotifyMix-Black.woff2",
+      weight: "800",
+      style: "normal",
+    },
+    {
+      path: "../public/font/SpotifyMix-Extrabold.woff2",
+      weight: "900",
+      style: "normal",
+    },
+  ],
+  variable: "--font-custom",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -24,7 +47,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${customFont.variable} font-sans`}>
       <head>
         <link
           rel="icon"
@@ -33,7 +56,10 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen`}
+        className={`antialiased min-h-screen`}
+        style={{
+          fontFamily: "var(--font-custom)",
+        }}
       >
         {children}
         <Footer />
