@@ -37,8 +37,8 @@ const customFont = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Reset Your Account Password",
-  description: "Reset your account password",
+  title: "Spotify",
+  description: "Update your account details",
 };
 
 export default function RootLayout({
@@ -51,8 +51,9 @@ export default function RootLayout({
       <head>
         <link
           rel="icon"
+          sizes="32x32"
           type="image/png"
-          href="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/icon_favicon_1_32.0Wecxv.png"
+          href="https://open.spotifycdn.com/cdn/images/favicon32.b64ecc03.png"
         />
       </head>
       <body

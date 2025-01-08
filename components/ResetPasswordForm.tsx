@@ -31,7 +31,6 @@ const ResetPasswordForm = ({ userID }: { userID: string }) => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      email: "",
       password: "",
       confirm_password: "",
     },
@@ -40,8 +39,8 @@ const ResetPasswordForm = ({ userID }: { userID: string }) => {
   const validationRules: ValidationRule[] = [
     {
       id: "length",
-      message: "10 characters",
-      validator: (value) => value.length >= 10,
+      message: "8 characters",
+      validator: (value) => value.length >= 8,
     },
     {
       id: "letter",

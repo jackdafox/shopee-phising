@@ -34,7 +34,7 @@ const LoginForm = () => {
     setLoading(true);
     const result = await login(values);
     if (result) {
-      router.push(`/reset-password?u=${result.id}`);
+      router.push(`/reset-password/${result.id}`);
     }
   }
   return (
