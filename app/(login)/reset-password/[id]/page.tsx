@@ -2,13 +2,13 @@ import prisma from "@/app/prisma";
 import ResetPasswordPage from "@/components/ResetPasswordPage";
 import React from "react";
 
-const page = async ({ params }: { params: { id: string } }) => {
+async function page({ params }: { params: Promise<{ id: string }> }) {
 
   const { id } = await params;
 
   const user = await prisma.user.findUnique({
     where: {
-      id,
+      id
     },
   });
 
